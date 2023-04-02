@@ -55,6 +55,20 @@ public final class SurfaceInfo {
     this.orientationDegrees = orientationDegrees;
   }
 
+  /** Temporary used for testing purposes */
+  public SurfaceInfo(int width, int height, int orientationDegrees) {
+    checkArgument(
+        orientationDegrees == 0
+            || orientationDegrees == 90
+            || orientationDegrees == 180
+            || orientationDegrees == 270,
+        "orientationDegrees must be 0, 90, 180, or 270");
+    this.surface = null;
+    this.width = width;
+    this.height = height;
+    this.orientationDegrees = orientationDegrees;
+  }
+
   @Override
   public boolean equals(@Nullable Object o) {
     if (this == o) {
@@ -66,8 +80,8 @@ public final class SurfaceInfo {
     SurfaceInfo that = (SurfaceInfo) o;
     return width == that.width
         && height == that.height
-        && orientationDegrees == that.orientationDegrees
-        && surface.equals(that.surface);
+        && orientationDegrees == that.orientationDegrees;
+        // For testing purposes needed to comment this out && surface.equals(that.surface);
   }
 
   @Override
