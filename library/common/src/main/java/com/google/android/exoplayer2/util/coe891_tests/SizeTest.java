@@ -1,5 +1,6 @@
 package com.google.android.exoplayer2.util.coe891_tests;
 import com.google.android.exoplayer2.util.Size;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
