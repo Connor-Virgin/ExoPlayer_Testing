@@ -99,4 +99,33 @@ public class PercentageRatingTest {
     PercentageRating percentRating = new PercentageRating(110);
   }
 
+  //CFG Test Cases
+  @Test(expected = IllegalArgumentException.class) //Negative
+  public void testPercentageRatingCFG1(){
+    PercentageRating percentRating = new PercentageRating(-10);
+  }
+  @Test//>=0, <=100
+  public void testPercentageRatingCFG2(){
+    PercentageRating percentRating = new PercentageRating(50);
+    assertEquals(50,percentRating.getPercent(),0);
+  }
+
+  //DFG Test Cases
+  @Test//>=0, <=100
+  public void testPercentageRatingDFG1(){
+    PercentageRating percentRating = new PercentageRating(50);
+    assertEquals(50,percentRating.getPercent(),0);
+  }
+
+  //LBT Test Cases
+  @Test(expected = IllegalArgumentException.class) //Negative
+  public void testPercentageRatingLBT1(){
+    PercentageRating percentRating = new PercentageRating(-10);
+  }
+  @Test//>=0, <=100
+  public void testPercentageRatingLBT2(){
+    PercentageRating percentRating = new PercentageRating(50);
+    assertEquals(50,percentRating.getPercent(),0);
+  }
+
 }
