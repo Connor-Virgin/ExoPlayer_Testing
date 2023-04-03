@@ -74,7 +74,7 @@ public class ParsableBitArrayTest {
     fail();
   }
 
-  //skipBytes Test Method
+  //skipBytes Test Methods
   @Test
   public void testSkipBytesISP1(){
     ParsableBitArray testArray = new ParsableBitArray(testData);
