@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+//needs to be in test package
 //@RunWith(RobolectricTestRunner.class)
 public class AssertionsTest {
 
@@ -75,6 +76,7 @@ public class AssertionsTest {
     res = Assertions.checkIndex(index, start, limit);
   }
 
+  //needs to be in test package
 //  @Test(expected = IllegalArgumentException.class)
 //  public void testEmptyISP1(){
 //    String string = null;
