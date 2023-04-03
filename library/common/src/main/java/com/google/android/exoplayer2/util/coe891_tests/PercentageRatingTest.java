@@ -80,4 +80,23 @@ public class PercentageRatingTest {
     PercentageRating percentRating1 = new PercentageRating(100);
     assertEquals(false,percentRating.equals(percentRating1));
   }
+
+  /** Testing Constructor for PercentageRating() */
+  //ISP Test Cases
+  @Test(expected = IllegalArgumentException.class) //Negative
+  public void testPercentageRatingISP1(){
+    PercentageRating percentRating = new PercentageRating(-10);
+  }
+
+  @Test//>=0, <=100
+  public void testPercentageRatingISP2(){
+    PercentageRating percentRating = new PercentageRating(50);
+    assertEquals(50,percentRating.getPercent(),0);
+  }
+
+  @Test(expected = IllegalArgumentException.class) //Negative
+  public void testPercentageRatingISP3(){
+    PercentageRating percentRating = new PercentageRating(110);
+  }
+
 }
