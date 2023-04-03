@@ -6,16 +6,26 @@ import org.junit.Test;
 
 public class LongArrayTest {
 
-  @Test
-  public void testAdd() {
-    LongArray longArray = new LongArray();
-    longArray.add(1);
-    longArray.add(2);
-    longArray.add(3);
-    Assert.assertEquals(1, longArray.get(0));
-    Assert.assertEquals(2, longArray.get(1));
-    Assert.assertEquals(3, longArray.get(2));
-  }
+    @Test
+    public void testAddISP() {
+      LongArray longArray = new LongArray();
+      Assert.assertEquals(0, longArray.size());
+
+      longArray.add(1);
+      Assert.assertEquals(1, longArray.size());
+      Assert.assertEquals(1, longArray.get(0));
+
+      for (int i = 1; i <= 10; i++) {
+        Assert.assertEquals(i, longArray.get(i - 1));
+      }
+
+      longArray.add(11);
+      Assert.assertEquals(11, longArray.size());
+      for (int i = 1; i <= 11; i++) {
+        Assert.assertEquals(i, longArray.get(i - 1));
+      }
+    }
+
 
   @Test
   public void TestAddCFG1() {
