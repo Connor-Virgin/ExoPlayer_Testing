@@ -8,24 +8,47 @@ public class LongArrayTest {
 
     @Test
     public void testAddISP() {
-      LongArray longArray = new LongArray();
-      Assert.assertEquals(0, longArray.size());
+      LongArray longArray1 = new LongArray();
+      Assert.assertEquals(0, longArray1.size());
 
-      longArray.add(1);
-      Assert.assertEquals(1, longArray.size());
-      Assert.assertEquals(1, longArray.get(0));
+      LongArray longArray2 = new LongArray();
+      longArray2.add(1);
+      Assert.assertEquals(1, longArray2.size());
+      Assert.assertEquals(1, longArray2.get(0));
 
+      LongArray longArray3 = new LongArray();
+      longArray3.add(1);
+      longArray3.add(2);
+      longArray3.add(3);
+      longArray3.add(4);
+      longArray3.add(5);
+      longArray3.add(6);
+      longArray3.add(7);
+      longArray3.add(8);
+      longArray3.add(9);
+      longArray3.add(10);
+      Assert.assertEquals(10, longArray3.size());
       for (int i = 1; i <= 10; i++) {
-        Assert.assertEquals(i, longArray.get(i - 1));
+        Assert.assertEquals(i, longArray3.get(i - 1));
       }
 
-      longArray.add(11);
-      Assert.assertEquals(11, longArray.size());
+      LongArray longArray4 = new LongArray();
+      longArray4.add(1);
+      longArray4.add(2);
+      longArray4.add(3);
+      longArray4.add(4);
+      longArray4.add(5);
+      longArray4.add(6);
+      longArray4.add(7);
+      longArray4.add(8);
+      longArray4.add(9);
+      longArray4.add(10);
+      longArray4.add(11);
+      Assert.assertEquals(11, longArray4.size());
       for (int i = 1; i <= 11; i++) {
-        Assert.assertEquals(i, longArray.get(i - 1));
+        Assert.assertEquals(i, longArray4.get(i - 1));
       }
     }
-
 
   @Test
   public void TestAddCFG1() {
@@ -69,6 +92,24 @@ public class LongArrayTest {
     Assert.assertEquals(1L, longArray.get(0));
     Assert.assertEquals(2L, longArray.get(1));
     Assert.assertEquals(3L, longArray.get(2));
+  }
+
+  @Test
+  public void testAddLBT() {
+    LongArray longArray = new LongArray();
+    longArray.add(1);
+    longArray.add(2);
+    longArray.add(3);
+    longArray.add(4);
+    longArray.add(5);
+    longArray.add(6);
+    Assert.assertEquals(6, longArray.size());
+    Assert.assertEquals(1, longArray.get(0));
+    Assert.assertEquals(2, longArray.get(1));
+    Assert.assertEquals(3, longArray.get(2));
+    Assert.assertEquals(4, longArray.get(3));
+    Assert.assertEquals(5, longArray.get(4));
+    Assert.assertEquals(6, longArray.get(5));
   }
 
   @Test
