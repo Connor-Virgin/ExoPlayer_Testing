@@ -6,8 +6,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 
-//@RunWith(RobolectricTestRunner.class)
+
+//needs to be in test package
+@RunWith(RobolectricTestRunner.class)
 public class AssertionsTest {
 
   @Test
@@ -22,29 +25,29 @@ public class AssertionsTest {
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testIndexISP2(){
-    int res, index, start, limit;
+    int index, start, limit;
     index = 1;
     start = 1;
     limit = 1;
-    res = Assertions.checkIndex(index, start, limit);
+    Assertions.checkIndex(index, start, limit);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testIndexISP3(){
-    int res, index, start, limit;
+    int index, start, limit;
     index = 1;
     start = 1;
     limit = 0;
-    res = Assertions.checkIndex(index, start, limit);
+    Assertions.checkIndex(index, start, limit);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testIndexISP4(){
-    int res, index, start, limit;
+    int index, start, limit;
     index = 1;
     start = 2;
     limit = 2;
-    res = Assertions.checkIndex(index, start, limit);
+    Assertions.checkIndex(index, start, limit);
   }
 
   @Test
@@ -59,41 +62,45 @@ public class AssertionsTest {
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testIndexLBT1(){
-    int res, index, start, limit;
+    int index, start, limit;
     index = 2;
     start = 1;
     limit = 1;
-    res = Assertions.checkIndex(index, start, limit);
+    Assertions.checkIndex(index, start, limit);
   }
 
   @Test(expected = IndexOutOfBoundsException.class)
   public void testIndexLBT2(){
-    int res, index, start, limit;
+    int index, start, limit;
     index = 1;
     start = 2;
     limit = 1;
-    res = Assertions.checkIndex(index, start, limit);
+    Assertions.checkIndex(index, start, limit);
   }
 
-//  @Test(expected = IllegalArgumentException.class)
-//  public void testEmptyISP1(){
-//    String string = null;
-//    String res;
-//    res = Assertions.checkNotEmpty(string);
-//  }
-//
-//  @Test(expected = IllegalArgumentException.class)
-//  public void testEmptyISP2(){
-//    String string = "";
-//    String res;
-//    res = Assertions.checkNotEmpty(string);
-//  }
-//
-//  @Test
-//  public void testEmptyISP3(){
-//    String string = "hello world";
-//    String res;
-//    res = Assertions.checkNotEmpty(string);
-//    assertEquals(string, res);
-//  }
+  //needs to be in test package
+  @Test(expected = IllegalArgumentException.class)
+  public void testEmptyISP1(){
+    String string = null;
+    Assertions.checkNotEmpty(string);
+    fail("null should have produced an exception");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testEmptyISP2(){
+    String string = "";
+    Assertions.checkNotEmpty(string);
+    fail("empty string should have produced an exception");
+  }
+
+  @Test
+  public void testEmptyISP3(){
+    String string = "hello world";
+    String res;
+    res = Assertions.checkNotEmpty(string);
+    assertEquals(string, res);
+  }
+
+
 }
+
