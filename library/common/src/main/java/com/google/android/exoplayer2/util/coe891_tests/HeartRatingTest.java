@@ -39,4 +39,45 @@ public class HeartRatingTest {
     ArrayList list = new ArrayList();
     assertEquals(false,heartRating.equals(list));
   }
+
+  //CFG Test Cases
+  @Test //Not Same Type
+  public void testEqualsCFG1(){
+    HeartRating heartRating = new HeartRating(true);
+    ArrayList list = new ArrayList();
+    assertEquals(false,heartRating.equals(list));
+  }
+
+  @Test //Same Object
+  public void testEqualsCFG2(){
+    HeartRating heartRating = new HeartRating(true);
+    assertEquals(true,heartRating.equals(heartRating));
+  }
+
+  //DFG Test Cases
+  @Test //Same Object
+  public void testEqualsDFG1(){
+    HeartRating heartRating = new HeartRating(true);
+    assertEquals(true,heartRating.equals(heartRating));
+  }
+
+  //LBT Test Cases
+  @Test //Null Value
+  public void testEqualsLBT1(){
+    HeartRating heartRating = new HeartRating(true);
+    assertEquals(false,heartRating.equals(null));
+  }
+
+  @Test //Same Object
+  public void testEqualsLBT2(){
+    HeartRating heartRating = new HeartRating(true);
+    assertEquals(true,heartRating.equals(heartRating));
+  }
+
+  @Test //Same Type unequal object
+  public void testEqualsLBT3(){
+    HeartRating heartRating = new HeartRating(true);
+    HeartRating heartRating1 = new HeartRating(false);
+    assertEquals(false,heartRating.equals(heartRating1));
+  }
 }
