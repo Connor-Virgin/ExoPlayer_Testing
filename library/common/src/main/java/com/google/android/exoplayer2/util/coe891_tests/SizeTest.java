@@ -30,4 +30,64 @@ public class SizeTest {
     Size size1 = new Size(1920,1080);
     assertEquals(false,size.equals(size1));
   }
+
+  //CFG Test Cases
+  @Test //Null Value
+  public void testEqualsCFG1(){
+    Size size = new Size(256,256);
+    assertEquals(false,size.equals(null));
+  }
+
+  @Test //Same Object
+  public void testEqualsCFG2(){
+    Size size = new Size(256,256);
+    assertEquals(true,size.equals(size));
+  }
+
+  @Test //Different Equal Object
+  public void testEqualsCFG3(){
+    Size size = new Size(256,256);
+    Size size1 = new Size(256,256);
+    assertEquals(true,size.equals(size1));
+  }
+  @Test //Different Unequal Object
+  public void testEqualsCFG4(){
+    Size size = new Size(256,256);
+    Size size1 = new Size(1920,1080);
+    assertEquals(false,size.equals(size1));
+  }
+
+  //DFG Test Cases
+  @Test //Different Unequal Object
+  public void testEqualsDFG1(){
+    Size size = new Size(256,256);
+    Size size1 = new Size(1920,1080);
+    assertEquals(false,size.equals(size1));
+  }
+
+  //LBT Test Cases
+  @Test //Null Value
+  public void testEqualsLBT1(){
+    Size size = new Size(256,256);
+    assertEquals(false,size.equals(null));
+  }
+
+  @Test //Same Object
+  public void testEqualsLBT2(){
+    Size size = new Size(256,256);
+    assertEquals(true,size.equals(size));
+  }
+
+  @Test //Different Equal Object
+  public void testEqualsLBT3(){
+    Size size = new Size(256,256);
+    Size size1 = new Size(256,256);
+    assertEquals(true,size.equals(size1));
+  }
+  @Test //Different Unequal Object
+  public void testEqualsLBT4(){
+    Size size = new Size(256,256);
+    Size size1 = new Size(1920,1080);
+    assertEquals(false,size.equals(size1));
+  }
 }
