@@ -90,4 +90,12 @@ public class SizeTest {
     Size size1 = new Size(1920,1080);
     assertEquals(false,size.equals(size1));
   }
+
+  //ISP Test Cases
+  @Test //Null Value
+  public void testSizeISP1(){
+    Size size = new Size(256,256);
+    assertEquals(false,size.equals(null));
+  }
+
 }
