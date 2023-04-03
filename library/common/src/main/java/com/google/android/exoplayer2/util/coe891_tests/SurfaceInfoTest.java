@@ -8,6 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class SurfaceInfoTest {
+  // Equals Method Tests
   // ISP Test cases
   @Test // Null Value
   public void testEqualsISP1(){
@@ -89,5 +90,4 @@ public class SurfaceInfoTest {
     SurfaceInfo surfaceInfo2 = new SurfaceInfo(1280, 720, 0);
     assertEquals(true, surfaceInfo1.equals(surfaceInfo2));
   }
-
 }
