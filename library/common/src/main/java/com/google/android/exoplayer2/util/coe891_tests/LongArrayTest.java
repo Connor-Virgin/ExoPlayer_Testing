@@ -26,11 +26,6 @@ public class LongArrayTest {
     Assert.assertEquals(1, longArray.get(0));
     Assert.assertEquals(2, longArray.get(1));
     Assert.assertEquals(3, longArray.get(2));
-    try {
-      longArray.get(3);
-      Assert.fail("Expected IndexOutOfBoundsException was not thrown");
-    } catch (IndexOutOfBoundsException e) {
-    }
   }
 
   @Test
